@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Http\Request;
 
 class Hotel extends Model
 {
@@ -31,10 +32,16 @@ class Hotel extends Model
      * @param string $hotelName
      * @return array
      */
-    static public function getHotelListByName(string $hotelName): array
+    static public function getHotelListByCondition(Request $request): array
     {
-        $result = Hotel::where('hotel_name', '=', $hotelName)
+        $searchTermName = '%' . $request->input('hotel_name') . '%';
+        $filterPrefectureId = $request->input('prefecture_id');
+
+        $result = Hotel::whereRaw('LOWER(hotel_name) LIKE ?', [$searchTermName])
             ->with('prefecture')
+            ->when($filterPrefectureId, function ($query) use ($filterPrefectureId) {
+                $query->where('prefecture_id', $filterPrefectureId);
+            })
             ->get()
             ->toArray();
 

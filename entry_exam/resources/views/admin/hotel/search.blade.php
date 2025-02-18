@@ -15,8 +15,20 @@
         <div class="search-hotel-name">
             <form action="{{ route('adminHotelSearchResult') }}" method="post">
                 @csrf
-                <input type="text" name="hotel_name" value="" placeholder="ホテル名">
-                <button type="submit">検索</button>
+                <div class="form-search__items">
+                    <input type="text" name="hotel_name" value="" placeholder="ホテル名">
+                    <select name="prefecture_id">
+                        <option value="">都道府県を選択してください</option>
+
+                        @foreach(getAllPrefectures() as $p)
+                            <option value="{{ $p->id }}">{{ $p->prefecture_name }}</option>
+                        @endforeach
+                    </select>
+                    <button type="submit">検索</button>
+                </div>
+                @error('hotel_name')
+                    <small class="error-message">{{ $message }}</small>
+                @enderror
             </form>
         </div>
         <hr>

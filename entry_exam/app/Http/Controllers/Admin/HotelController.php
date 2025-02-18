@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SearchHotelRequest;
+use App\Models\Prefecture;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Hotel;
@@ -33,12 +35,11 @@ class HotelController extends Controller
 
     /** post methods */
 
-    public function searchResult(Request $request): View
+    public function searchResult(SearchHotelRequest $request): View
     {
         $var = [];
 
-        $hotelNameToSearch = $request->input('hotel_name');
-        $hotelList = Hotel::getHotelListByName($hotelNameToSearch);
+        $hotelList = Hotel::getHotelListByCondition($request);
 
         $var['hotelList'] = $hotelList;
 
