@@ -13,6 +13,12 @@ class Hotel extends Model
      */
     protected $primaryKey = 'hotel_id';
 
+    protected $fillable = [
+        'hotel_name',
+        'prefecture_id',
+        'file_path',
+    ];
+
     /**
      * @var array
      */
@@ -42,6 +48,7 @@ class Hotel extends Model
             ->when($filterPrefectureId, function ($query) use ($filterPrefectureId) {
                 $query->where('prefecture_id', $filterPrefectureId);
             })
+            ->orderByDesc('created_at')
             ->get()
             ->toArray();
 

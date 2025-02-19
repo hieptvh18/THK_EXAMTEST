@@ -1,0 +1,36 @@
+.form-group{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-bottom: 15px;
+
+    label{
+        margin-bottom: 5px;
+    }
+
+    .form-control{
+        border-radius: 5px;
+        padding: 7px 5px;
+        border: 1px solid #666;
+    }
+
+    .form-control:focus{
+        outline: none;
+    }
+}
+
+.btn{
+    padding: 7px 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+
+    &.btn-primary{
+        background: blue;
+        color: white;
+    }
+
+    &:hover{
+        background: #0000EE;
+    }
+}

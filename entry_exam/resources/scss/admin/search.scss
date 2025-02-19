@@ -1,6 +1,33 @@
 .form-search__items{
     display: flex;
+    gap: 10px;
+
+    input{
+        padding: 7px 10px;
+        border-radius: 5px;
+        border: 1px solid #333;
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+    button{
+        background: #ccc;
+        padding: 0 15px;
+        cursor: pointer;
+        border: 1px solid #333;
+
+        &:hover{
+            background: #2d3748;
+            color: #fff;
+        }
+    }
 }
 .error-message{
     color: red;
+}
+
+.success-message{
+    color: green;
 }

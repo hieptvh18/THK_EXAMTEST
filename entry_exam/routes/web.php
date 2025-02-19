@@ -14,9 +14,9 @@ Route::get('/hotel/{hotel_id}', [HotelController::class, 'showDetail'])->name('h
 /** admin screen */
 Route::get('/admin', [AdminTopController::class, 'index'])->name('adminTop');
 Route::get('/admin/hotel/search', [AdminHotelController::class, 'showSearch'])->name('adminHotelSearchPage');
-Route::get('/admin/hotel/edit', [AdminHotelController::class, 'showEdit'])->name('adminHotelEditPage');
+Route::get('/admin/hotel/{hotel_id}/edit', [AdminHotelController::class, 'showEdit'])->name('adminHotelEditPage');
 Route::get('/admin/hotel/create', [AdminHotelController::class, 'showCreate'])->name('adminHotelCreatePage');
-Route::post('/admin/hotel/search/result', [AdminHotelController::class, 'searchResult'])->name('adminHotelSearchResult');
-Route::post('/admin/hotel/edit', [AdminHotelController::class, 'edit'])->name('adminHotelEditProcess');
+Route::get('/admin/hotel/search/result', [AdminHotelController::class, 'searchResult'])->name('adminHotelSearchResult');
+Route::put('/admin/hotel/edit', [AdminHotelController::class, 'edit'])->name('adminHotelEditProcess');
 Route::post('/admin/hotel/create', [AdminHotelController::class, 'create'])->name('adminHotelCreateProcess');
-Route::post('/admin/hotel/delete', [AdminHotelController::class, 'delete'])->name('adminHotelDeleteProcess');
+Route::delete('/admin/hotel/{hotel_id}/delete', [AdminHotelController::class, 'delete'])->name('adminHotelDeleteProcess');

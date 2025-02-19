@@ -123,4 +123,6 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    // DIRECTORY UPLOAD HOTEL IMAGE
+    'dir_upload_hotel' => 'assets' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'hotel'
 ];

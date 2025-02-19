@@ -3,6 +3,9 @@
         <h3 class="title">サイト管理</h3>
         <ul>
             <li>
+                <a class="link" href="{{ route('top') }}">Website</a>
+            </li>
+            <li>
                 <a class="link" href="{{ route('adminHotelSearchPage') }}">ホテル検索</a>
             </li>
             <li>
