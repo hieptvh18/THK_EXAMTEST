@@ -1,3 +1,10 @@
+
+#step-1{
+    #btnRemoveImage{
+        width: 100px;
+    }
+}
+
 .form-group{
     display: flex;
     flex-direction: column;
@@ -32,5 +39,26 @@
 
     &:hover{
         background: #0000EE;
+    }
+}
+
+.d-none{
+    display: none;
+}
+
+.d-flex{
+    display: flex;
+}
+
+#step-2{
+    margin-bottom: 20px;
+
+    .label-preview{
+        margin-bottom: 10px;
+    }
+
+    .overview{
+        font-size: 18px;
+        font-weight: 600;
     }
 }

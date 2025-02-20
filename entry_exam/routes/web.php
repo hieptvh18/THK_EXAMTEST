@@ -14,6 +14,7 @@ Route::get('/hotel/{hotel_id}', [HotelController::class, 'showDetail'])->name('h
 /** admin screen */
 Route::get('/admin', [AdminTopController::class, 'index'])->name('adminTop');
 Route::get('/admin/hotel/search', [AdminHotelController::class, 'showSearch'])->name('adminHotelSearchPage');
+Route::get('/admin/booking/search', [\App\Http\Controllers\Admin\BookingController::class, 'showSearch'])->name('adminBookingSearchPage');
 Route::get('/admin/hotel/{hotel_id}/edit', [AdminHotelController::class, 'showEdit'])->name('adminHotelEditPage');
 Route::get('/admin/hotel/create', [AdminHotelController::class, 'showCreate'])->name('adminHotelCreatePage');
 Route::get('/admin/hotel/search/result', [AdminHotelController::class, 'searchResult'])->name('adminHotelSearchResult');

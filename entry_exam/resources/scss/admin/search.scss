@@ -1,5 +1,6 @@
 .form-search__items{
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 
     input{
@@ -30,4 +31,25 @@
 
 .success-message{
     color: green;
+}
+
+.pagination{
+    display: flex;
+    gap: 10px;
+    
+    .page-item{
+
+        &.active{
+
+        }
+
+        &.disabled{
+
+        }
+
+        &.page-link{
+            display: inline-block;
+            padding: 5px 10px;
+        }
+    }
 }

@@ -14,7 +14,6 @@
         <hr>
         <div class="search-hotel-name">
             <form action="{{ route('adminHotelSearchResult') }}" method="GET">
-                @csrf
                 <div class="form-search__items">
                     <input type="search" name="hotel_name" value="" placeholder="ホテル名">
                     <select name="prefecture_id">
